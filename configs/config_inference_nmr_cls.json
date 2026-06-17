@@ -1,0 +1,24 @@
+{
+  "comment": "Configuration for NMR superclass inference",
+
+  "save_dir": "model_checkpoint",
+
+  "head_type": "linear",
+  "hidden_dim": 512,
+  "pooling": "mean",
+  "freeze_encoder": false,
+
+  "d_model": 768,
+  "nhead": 12,
+  "num_encoder_layers": 16,
+  "dim_feedforward": 3072,
+  "h_bin_size": 0.01,
+  "h_max": 16.0,
+  "c_bin_size": 0.1,
+  "c_max": 230.0,
+  "dropout": 0.1,
+
+  "val_batch_size": 256,
+  "num_workers": 4,
+  "device": "cuda:0"
+}

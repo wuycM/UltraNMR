@@ -1,0 +1,52 @@
+{
+  "comment": "Configuration for NMR superclass classification",
+
+  "train_data": "../data/NMRGym_train_balanced_with_class.jsonl",
+  "val_data": "../data/NMRGym_val_balanced_with_class.jsonl",
+  "test_data": "../data/NMRGym_test_balanced_with_class.jsonl",
+
+  "pretrained_encoder": null,
+
+  "save_dir": "checkpoints_classification",
+
+  "exclude_classes": ["Failed"],
+
+  "head_type": "linear",
+  "hidden_dim": 512,
+  "pooling": "mean",
+  "freeze_encoder": false,
+
+  "d_model": 768,
+  "nhead": 12,
+  "num_encoder_layers": 16,
+  "dim_feedforward": 3072,
+  "num_decoder_layers": 6,
+  "decoder_nhead": 12,
+  "decoder_dim_feedforward": 3072,
+  "h_bin_size": 0.01,
+  "h_max": 16.0,
+  "c_bin_size": 0.1,
+  "c_max": 230.0,
+
+  "batch_size": 128,
+  "val_batch_size": 256,
+  "num_epochs": 50,
+  "learning_rate": 1e-4,
+  "weight_decay": 0.01,
+  "n_warmup_steps": 1000,
+
+  "h_shift_range": [-0.01, 0.01],
+  "c_shift_range": [-0.1, 0.1],
+  "shift_aug_p": 0.2,
+
+  "dropout": 0.1,
+  "max_grad_norm": 1.0,
+
+  "use_bf16": true,
+
+  "num_workers": 4,
+  "seed": 42,
+  "device": "cuda:0",
+
+  "resume_from_checkpoint": "../model_checkpoint/checkpoints_nce/model_epoch_1.pth"
+}

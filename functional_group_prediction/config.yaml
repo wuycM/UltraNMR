@@ -1,0 +1,98 @@
+data:
+  augment: true
+  exclude_classes:
+  - 15
+  - 16
+  max_peaks: 200
+  noise_std: 0.02
+  scale_range:
+  - 0.95
+  - 1.05
+  test_jsonl: ../data/NMRGym_test_balanced.jsonl
+  train_jsonl: ../data/NMRGym_train_balanced.jsonl
+  val_jsonl: ../data/NMRGym_val_balanced.jsonl
+evaluation:
+  threshold: 0.5
+  use_optimal_thresholds: true
+model:
+  encoder_config:
+    c_bin_size: 0.1
+    c_max: 230.0
+    d_model: 768
+    dim_feedforward: 3072
+    dropout: 0.1
+    fp_sim_bin_size: 0.005
+    fp_sim_mlp_hidden: 512
+    h_bin_size: 0.01
+    h_max: 16.0
+    nhead: 12
+    num_encoder_layers: 16
+    use_count_embedding: false
+    use_identity_embedding: true
+  freeze_encoder: false
+  num_functional_groups: 22
+  pretrained_checkpoint: ../model_checkpoint/checkpoints_nce/model_epoch_1.pth
+training:
+  batch_size: 128
+  eval_every: 5
+  loss:
+    focal_alpha: 0.29950908706946805
+    focal_alpha_per_class:
+    - 0.5792636871337891
+    - 0.2519034743309021
+    - 0.46867769956588745
+    - 0.7499990463256836
+    - 0.17785696685314178
+    - 0.3440019488334656
+    - 0.6257086992263794
+    - 0.16474312543869019
+    - 0.6116650700569153
+    - 0.18541701138019562
+    - 0.26382362842559814
+    - 0.26901721954345703
+    - 0.2429654598236084
+    - 0.1631264090538025
+    - 0.18731015920639038
+    - 0.25
+    - 0.25
+    - 0.15132354199886322
+    - 0.15627421438694
+    - 0.16336515545845032
+    - 0.1827573925256729
+    - 0.15000000596046448
+    focal_gamma: 2.7400410825555976
+    focal_gamma_per_class:
+    - 2.0122900009155273
+    - 2.146955728530884
+    - 2.027195692062378
+    - 2.0
+    - 2.5643818378448486
+    - 2.0639944076538086
+    - 2.008080005645752
+    - 2.986921787261963
+    - 2.0092644691467285
+    - 2.449399709701538
+    - 2.1288952827453613
+    - 2.1221232414245605
+    - 2.163419008255005
+    - 3.0845088958740234
+    - 2.427237033843994
+    - 2.0
+    - 2.0
+    - 5.684988021850586
+    - 3.8478918075561523
+    - 3.0689375400543213
+    - 2.484419345855713
+    - 7.0
+    ldam_max_m: 0.5
+    ldam_s: 30
+    strategy: focal
+    use_logits: true
+    use_per_class_params: true
+  num_epochs: 50
+  num_workers: 16
+  optimizer:
+    lr: 0.0001
+    weight_decay: 0.01
+  save_dir: checkpoints_nmrgym_fg
+  use_amp: true

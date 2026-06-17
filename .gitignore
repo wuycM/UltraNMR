@@ -1,0 +1,22 @@
+# Bytecode and caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Runtime artifacts
+runs/
+checkpoints_nmrgym_formula/
+
+# Data: ignore everything, then allow only the two requested files
+data/*
+!data/NMRGym_test_balanced.jsonl
+!data/case.jsonl
+
+# Checkpoints: ignore contents, keep directory placeholder only
+model_checkpoint/*
+!model_checkpoint/.gitkeep
+
+# Local caches
+.cache/
+model_checkpoint/.cache/
