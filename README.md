@@ -5,6 +5,9 @@ structure analysis
 </h1>
 
 <p align="center">
+  <a href="https://arxiv.org/abs/2606.20756">
+    <img src="https://img.shields.io/badge/arXiv-2606.20756-b31b1b.svg" alt="arXiv">
+  </a>
   <a href="https://huggingface.co/milesyc/ultranmr">
     <img src="https://img.shields.io/badge/Models-HuggingFace-FFD21E.svg" alt="Models">
   </a>
